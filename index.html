@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProInspect | Residential Home Inspections</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .video-docker video {
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            min-width: 100%; min-height: 100%;
+            width: auto; height: auto;
+        }
+        #videoModal {
+            transition: opacity 0.3s ease-in-out;
+        }
+        /* Custom floating animation for the report image */
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(-2deg); }
+            50% { transform: translateY(-10px) rotate(0deg); }
+            100% { transform: translateY(0px) rotate(-2deg); }
+        }
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900 font-sans">
+
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="text-2xl font-black text-blue-600 tracking-tighter">PRO<span class="text-gray-900">INSPECT</span></div>
+            <div class="hidden md:flex gap-8 font-medium text-gray-600">
+                <a href="#services" class="hover:text-blue-600 transition">Services</a>
+                <a href="#reports" class="hover:text-blue-600 transition">Sample Reports</a>
+                <a href="#book" class="hover:text-blue-600 transition">Booking</a>
+            </div>
+            <a href="tel:5551234567" class="bg-gray-900 text-white px-5 py-2 rounded-lg font-semibold hover:bg-blue-600 transition">Call (555) 123-4567</a>
+        </div>
+    </nav>
+
+    <section class="relative h-[90vh] flex flex-col items-center justify-center text-center text-white px-4">
+        <div class="video-docker absolute top-0 left-0 w-full h-full overflow-hidden bg-gray-900">
+            <video class="min-w-full min-h-full absolute object-cover opacity-60" src="https://assets.mixkit.co/videos/preview/mixkit-construction-worker-looking-at-a-blue-print-40342-large.mp4" autoplay muted loop playsinline></video>
+        </div>
+        
+        <div class="relative z-10 max-w-4xl">
+            <span class="uppercase tracking-[0.3em] text-sm font-bold text-blue-400 mb-4 block">Certified Home Inspector</span>
+            <h1 class="text-5xl md:text-7xl font-extrabold mb-6 leading-tight">See the Home <br><span class="text-blue-400">Beyond the Paint.</span></h1>
+            <p class="text-lg md:text-xl mb-10 text-gray-200 max-w-2xl mx-auto">Providing high-tech residential inspections with thermal imaging and drone technology for total peace of mind.</p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#book" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-10 rounded-full text-lg shadow-lg transition-all transform hover:scale-105">Book My Inspection</a>
+                <button onclick="toggleModal()" class="bg-white/10 hover:bg-white/20 text-white font-bold py-4 px-10 rounded-full border border-white/30 backdrop-blur-md transition-all">Watch My Process</button>
+            </div>
+        </div>
+    </section>
+
+    <div class="bg-white py-8 border-b border-gray-100">
+        <div class="max-w-6xl mx-auto px-6 flex flex-wrap justify-center items-center gap-12 opacity-50 grayscale hover:grayscale-0 transition-all text-xs md:text-sm">
+            <span class="font-bold text-gray-400 tracking-widest uppercase">Internachi Certified</span>
+            <span class="font-bold text-gray-400 tracking-widest uppercase">Ashi Member</span>
+            <span class="font-bold text-gray-400 tracking-widest uppercase">Licensed & Insured</span>
+            <span class="font-bold text-gray-400 tracking-widest uppercase">Drone Pilot (Part 107)</span>
+        </div>
+    </div>
+
+    <section id="services" class="py-24 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <h2 class="text-4xl md:text-5xl font-black text-gray-900 mb-4">Inspection Services</h2>
+            <div class="h-1.5 w-20 bg-blue-600 mx-auto rounded-full mb-16"></div>
+
+            <div class="grid md:grid-cols-3 gap-10">
+                <div class="bg-white p-10 rounded-3xl shadow-sm hover:shadow-2xl transition-all border border-gray-100 group">
+                    <div class="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-blue-600 transition-colors mx-auto">
+                        <svg class="w-8 h-8 text-blue-600 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Full Home</h3>
+                    <p class="text-gray-600">A rigorous 400-point evaluation of the home's structure, HVAC, plumbing, and electrical systems.</p>
+                </div>
+
+                <div class="bg-white p-10 rounded-3xl shadow-sm hover:shadow-2xl transition-all border border-gray-100 group">
+                    <div class="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-blue-600 transition-colors mx-auto">
+                        <svg class="w-8 h-8 text-blue-600 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Thermal Imaging</h3>
+                    <p class="text-gray-600">Advanced infrared cameras to detect hidden moisture, insulation gaps, and electrical overheating.</p>
+                </div>
+
+                <div class="bg-white p-10 rounded-3xl shadow-sm hover:shadow-2xl transition-all border border-gray-100 group">
+                    <div class="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-blue-600 transition-colors mx-auto">
+                        <svg class="w-8 h-8 text-blue-600 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Aerial Drone</h3>
+                    <p class="text-gray-600">4K drone footage of the roof and chimney areas that are otherwise inaccessible or unsafe to climb.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="reports" class="py-24 bg-white overflow-hidden">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                
+                <div class="w-full lg:w-1/2 relative">
+                    <div class="absolute -inset-10 bg-blue-100 rounded-full blur-3xl opacity-40"></div>
+                    <div class="relative animate-float">
+                        <img src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&q=80&w=800" 
+                             alt="Sample Report" 
+                             class="rounded-2xl shadow-2xl border-4 border-white">
+                        <div class="absolute -bottom-6 -right-6 bg-blue-600 text-white p-6 rounded-2xl shadow-xl hidden md:block">
+                            <p class="text-3xl font-black italic">24hr</p>
+                            <p class="text-xs uppercase tracking-widest font-bold">Delivery</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w-full lg:w-1/2">
+                    <h2 class="text-4xl font-black text-gray-900 mb-6 leading-tight">Reports Made for <span class="text-blue-600">Action.</span></h2>
+                    <p class="text-gray-600 text-lg mb-8 leading-relaxed">No more digging through 60-page PDFs. My reports are mobile-optimized, high-definition, and built to help you negotiate.</p>
+                    
+                    <div class="space-y-4 mb-10">
+                        <div class="flex items-start gap-4">
+                            <div class="mt-1 bg-blue-100 p-1 rounded-full"><svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">High-Def Photo & Video</h4>
+                                <p class="text-sm text-gray-500">I zoom in on the details so you don't have to guess.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="mt-1 bg-blue-100 p-1 rounded-full"><svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Repair Request Builder</h4>
+                                <p class="text-sm text-gray-500">Easily copy-paste defects directly into your repair addendum.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="sample-report.pdf" download class="inline-flex items-center gap-3 bg-gray-900 text-white font-bold py-5 px-10 rounded-2xl hover:bg-blue-600 transition-all shadow-xl group">
+                        <svg class="w-6 h-6 group-hover:translate-y-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                        Download Sample Report (PDF)
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="book" class="py-20 bg-blue-600">
+        <div class="max-w-4xl mx-auto px-6 text-center text-white">
+            <h2 class="text-4xl font-black mb-6">Ready to Protect Your Investment?</h2>
+            <p class="text-blue-100 text-xl mb-10">Check my real-time availability and get an instant quote online.</p>
+            <a href="#" class="bg-white text-blue-600 font-black py-5 px-12 rounded-full text-xl hover:bg-gray-100 transition shadow-2xl inline-block">Schedule Now</a>
+        </div>
+    </section>
+
+    <div id="videoModal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/90 p-4">
+        <div class="relative w-full max-w-4xl aspect-video bg-black rounded-2xl overflow-hidden shadow-2xl">
+            <button onclick="toggleModal()" class="absolute top-4 right-4 text-white hover:text-blue-400 z-10">
+                <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+            <iframe id="modalVideo" class="w-full h-full" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <script>
+        function toggleModal() {
+            const modal = document.getElementById('videoModal');
+            modal.classList.toggle('hidden');
+            modal.classList.toggle('flex');
+            
+            // Stops video if modal is closed
+            const iframe = document.getElementById('modalVideo');
+            if(modal.classList.contains('hidden')) {
+                const src = iframe.src;
+                iframe.src = src;
+            }
+        }
+    </script>
+
+</body>
+</html>
